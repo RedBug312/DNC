@@ -33,6 +33,8 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.13
+    - name: Check lib
+      run: ls lib
     - name: Test with Maven
       run: mvn -B -Peclipse,tests,exp,mpa test
 
