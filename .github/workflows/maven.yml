@@ -21,8 +21,7 @@ jobs:
       with:
         java-version: 1.13
     - name: Validate with Maven
-      run: mvn -B -Peclipse,tests,exp,mpa validate
-    - name: Test with Maven 
-      run: mvn -B -Peclipse,tests,exp,mpa test
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: |
+        mvn -B -Peclipse,tests,exp,mpa validate
+        mvn -B -Peclipse,tests,exp,mpa test
+        mvn -B -Peclipse,tests,exp,mpa package --file pom.xml
