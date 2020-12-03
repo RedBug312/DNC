@@ -20,15 +20,15 @@ jobs:
       with:
         java-version: 1.13
     - name: Download RTCToolbox
-      run: mvn -B -Peclipse,tests,exp,mpa validate
+      run: mvn validate -B -Peclipse,tests,exp,mpa
     - name: Check lib
       run: ls lib
     - name: Compile with Maven
-      run: mvn -B -Peclipse,tests,exp,mpa compile
+      run: mvn compile -B -Peclipse,tests,exp,mpa
     - name: Check lib
       run: ls lib
     - name: Test with Maven
-      run: mvn -B -Peclipse,tests,exp,mpa test
+      run: mvn test -B -Peclipse,tests,exp,mpa
     - name: Check lib
       run: ls lib
 
