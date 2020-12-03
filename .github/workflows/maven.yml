@@ -25,5 +25,9 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 13
+    - name: Download RTCToolbox
+      run: mvn -B -Peclipse,tests,exp,mpa clean validate
+    - name: Test with Maven
+      run: mvn -B -Peclipse,tests,exp,mpa clean test
     - name: Build with Maven
-      run: mvn -B -Peclipse,tests,exp,mpa clean validate test package
+      run: mvn -B -Peclipse,tests,exp,mpa clean package
