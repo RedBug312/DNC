@@ -19,12 +19,12 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.13
+    - name: Update git submoduiles
+      run: git submodule update --init --recursive
     - name: Download RTCToolbox
-      run: mvn validate -P eclipse,tests,exp,mpa
+      run: mvn -B -P eclipse,tests,exp,mpa validate --file pom.xml
     - name: Compile with Maven
-      run: |
-        mvn compile -P eclipse,tests,exp,mpa
-        mvn test -P eclipse,tests,exp,mpa
+      run: mvn -B -P eclipse,tests,exp,mpa verify --file pom.xml
 
   build:
     runs-on: ubuntu-latest
