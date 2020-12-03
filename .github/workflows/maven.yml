@@ -26,4 +26,4 @@ jobs:
       with:
         java-version: 13
     - name: Build with Maven
-      run: mvn -B -Peclipse,tests,exp,mpa clean validate test package --file pomgwgw.xml
+      run: mvn -B -Peclipse,tests,exp,mpa clean validate test package
